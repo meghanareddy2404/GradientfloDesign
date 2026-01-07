@@ -3,10 +3,18 @@ import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { CodeIndexingSection } from "@/components/CodeIndexingSection";
+import { CapabilitySection } from "@/components/CapabilitySection";
+import { FeaturesSection } from "@/components/FeaturesSection";
+import { LearningSystemSection } from "@/components/LearningSystemSection";
+import { ImpactSection } from "@/components/ImpactSection";
+import { MetricsSection } from "@/components/MetricsSection";
+import { IntegrationsSection } from "@/components/IntegrationsSection";
+import { EnterpriseSection } from "@/components/EnterpriseSection";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#111] flex flex-col items-center pb-8 md:pb-[30px] pt-0 px-4 md:px-0 relative overflow-hidden">
+    <main className="min-h-screen bg-[#111111] flex flex-col items-center pb-8 md:pb-[30px] pt-0 px-4 md:px-0 relative overflow-hidden">
       {/* Navigation */}
       <Navbar />
 
@@ -48,6 +56,44 @@ export default function Home() {
       <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-[240px]">
         <CodeIndexingSection />
       </div>
+
+      {/* Capability Section */}
+      <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-[240px]">
+        <CapabilitySection />
+      </div>
+
+      {/* Features Section */}
+      <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-[240px]">
+        <FeaturesSection />
+      </div>
+
+      {/* Learning System Section */}
+      <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-[240px]">
+        <LearningSystemSection />
+      </div>
+
+      {/* Impact Section */}
+      <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-[240px]">
+        <ImpactSection />
+      </div>
+
+      {/* Metrics Section */}
+      <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-[240px]">
+        <MetricsSection />
+      </div>
+
+      {/* Integrations Section */}
+      <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-[240px]">
+        <IntegrationsSection />
+      </div>
+
+      {/* Enterprise Section */}
+      <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-[240px]">
+        <EnterpriseSection />
+      </div>
+
+      {/* Footer */}
+      <Footer />
     </main>
   );
 }
