@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #111111;
+  --foreground: #ffffff;
+}
+
+@layer base {
+  body {
+    @apply bg-[#111111] text-[#ffffff];
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom font faces */
+@font-face {
+  font-family: "mac's Extended Minecraft";
+  src: url("/fonts/minecraft.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
