@@ -20,7 +20,7 @@ export const Navbar: React.FC = () => {
     <nav className="w-full max-w-[1024px] px-4 md:px-6 py-6 md:py-8 flex items-center justify-between border-[0.6px] border-transparent rounded-2xl overflow-hidden">
       {/* Logo */}
       <div className="shrink-0">
-        <Logo className="h-4" />
+        <Logo className="md:h-8 h-6" />
       </div>
 
       {/* Navigation Links - Hidden on mobile */}
@@ -39,16 +39,19 @@ export const Navbar: React.FC = () => {
         <Button
           variant="secondary"
           size="sm"
-          className="p-2 bg-white/20"
+          className="p-2 bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm"
           aria-label="Join Discord"
         >
           <DiscordIcon className="size-4 text-white" />
         </Button>
-        <Button variant="primary" size="sm" className="text-xs whitespace-nowrap">
+        <Button
+          variant="default"
+          size="sm"
+          className="text-xs whitespace-nowrap bg-white text-[#121212] hover:bg-gray-100"
+        >
           Get Beta Access
         </Button>
       </div>
     </nav>
   );
 };
-

@@ -34,17 +34,17 @@ export const Hero: React.FC = () => {
 
       {/* Main Heading */}
       <h1 className="w-full text-center text-white font-semibold leading-tight md:leading-[80px] tracking-tight md:tracking-[1.28px]">
-        <span className="text-3xl md:text-[56px] font-bold font-[family-name:var(--font-geist)]">
+        <span className="text-3xl md:text-[56px] font-bold font-[family-name:var(--font-geist-sans)]">
           Learning{" "}
         </span>
         <span className="text-2xl md:text-[42px] font-normal font-minecraft">
           Infrastructure
         </span>
-        <span className="text-3xl md:text-[56px] font-bold font-[family-name:var(--font-geist)]">
+        <span className="text-3xl md:text-[56px] font-bold font-[family-name:var(--font-geist-sans)]">
           {" "}
         </span>
         <br />
-        <span className="text-3xl md:text-[56px] font-bold font-[family-name:var(--font-geist)]">
+        <span className="text-3xl md:text-[56px] font-bold font-[family-name:var(--font-geist-sans)]">
           for Engineering Teams
         </span>
       </h1>
@@ -60,20 +60,25 @@ export const Hero: React.FC = () => {
         onSubmit={handleSubmit}
         className="backdrop-blur-sm backdrop-filter bg-white/15 border border-white/15 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-1.5 p-1.5 rounded-xl w-full sm:w-auto"
       >
-        <Input
-          type="email"
-          placeholder="Email address"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full sm:min-w-[249px]"
-          wrapperClassName="h-8"
-          required
-        />
-        <Button type="submit" variant="primary" size="sm" className="w-full sm:w-auto">
+        <div className="relative w-full sm:min-w-[249px] h-8">
+          <Input
+            type="email"
+            placeholder="Email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full h-8 bg-transparent text-white placeholder:text-white/50 border-0 focus-visible:ring-0"
+            required
+          />
+        </div>
+        <Button
+          type="submit"
+          variant="default"
+          size="sm"
+          className="w-full sm:w-auto bg-white text-[#121212] hover:bg-gray-100"
+        >
           Beta Access
         </Button>
       </form>
     </div>
   );
 };
-

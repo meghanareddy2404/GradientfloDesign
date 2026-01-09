@@ -1,16 +1,18 @@
 import React from "react";
 import Image from "next/image";
-import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import { CodeIndexingSection } from "@/components/CodeIndexingSection";
-import { CapabilitySection } from "@/components/CapabilitySection";
-import { FeaturesSection } from "@/components/FeaturesSection";
-import { LearningSystemSection } from "@/components/LearningSystemSection";
-import { ImpactSection } from "@/components/ImpactSection";
-import { MetricsSection } from "@/components/MetricsSection";
-import { IntegrationsSection } from "@/components/IntegrationsSection";
-import { EnterpriseSection } from "@/components/EnterpriseSection";
-import { Footer } from "@/components/Footer";
+import {
+  Navbar,
+  Hero,
+  CodeIndexingSection,
+  CapabilitySection,
+  FeaturesSection,
+  LearningSystemSection,
+  ImpactSection,
+  MetricsSection,
+  IntegrationsSection,
+  EnterpriseSection,
+  Footer,
+} from "@/components";
 
 export default function Home() {
   return (
@@ -19,7 +21,7 @@ export default function Home() {
       <Navbar />
 
       {/* Main Content Area */}
-      <div className="flex-1 w-full flex flex-col items-center gap-12 md:gap-16 px-0 py-6 md:py-10 relative">
+      <div className="flex-1 w-full flex flex-col items-center gap-12 md:gap-16 md:px-4 lg:px-0 pt-6 md:pt-10 relative">
         {/* Background Gradient Effect - Hidden on mobile for performance */}
         <div className="hidden lg:block absolute left-[306px] top-[-1197px] w-[1069px] h-[292px] flex items-center justify-center pointer-events-none">
           <div className="rotate-[270deg]">
@@ -38,14 +40,22 @@ export default function Home() {
         <Hero />
 
         {/* Platform Preview */}
-        <div className="relative w-full max-w-[1248px] aspect-[1248/832] rounded-xl md:rounded-2xl border-4 md:border-8 border-[#3552bf] overflow-hidden">
-          <Image
-            src="/assets/e74ed57f623576498a1f0340b9ad5bdc7f657aa9.png"
-            alt="Gradientflo Platform Preview"
-            fill
-            className="object-cover object-center pointer-events-none"
-            priority
-          />
+        <div
+          style={{
+            background:
+              "conic-gradient(from 53.23deg at 50% 50%, #3552BF 0deg, #35C5FF 129.81deg, #C051EF 180.01deg, #FF3576 261.35deg, #F5DDAA 360deg)",
+          }}
+          className="relative w-full max-w-[1248px] aspect-[1248/832] p-[4px] md:p-[8px] rounded-3xl"
+        >
+          <div className="bg-[#0B0B0B] rounded-[20px] w-full h-full relative overflow-hidden">
+            <Image
+              src="/assets/e74ed57f623576498a1f0340b9ad5bdc7f657aa9.png"
+              alt="Gradientflo Platform Preview"
+              fill
+              className="object-cover object-center pointer-events-none"
+              priority
+            />
+          </div>
         </div>
 
         {/* Bottom Gradient Overlay */}
@@ -53,43 +63,59 @@ export default function Home() {
       </div>
 
       {/* Code Indexing Section */}
-      <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-[240px]">
-        <CodeIndexingSection />
+      <div className="w-full bg-black">
+        <div className="w-full max-w-[374.8px] md:max-w-[753.6px] lg:max-w-[1148px] mx-auto px-2 md:px-2">
+          <CodeIndexingSection />
+        </div>
       </div>
 
       {/* Capability Section */}
-      <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-[240px]">
-        <CapabilitySection />
+      <div className="w-full bg-black">
+        <div className="w-full max-w-[374.8px] md:max-w-[753.6px] lg:max-w-[1148px] mx-auto px-2 md:px-2">
+          <CapabilitySection />
+        </div>
       </div>
 
       {/* Features Section */}
-      <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-[240px]">
-        <FeaturesSection />
+      <div className="w-full bg-black">
+        <div className="w-full max-w-[374.8px] md:max-w-[753.6px] lg:max-w-[1148px] mx-auto px-2 md:px-2">
+          <FeaturesSection />
+        </div>
       </div>
 
       {/* Learning System Section */}
-      <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-[240px]">
-        <LearningSystemSection />
+      <div className="w-full bg-black">
+        <div className="w-full max-w-[374.8px] md:max-w-[753.6px] lg:max-w-[1148px] mx-auto px-2 md:px-2">
+          <LearningSystemSection />
+        </div>
       </div>
 
       {/* Impact Section */}
-      <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-[240px]">
-        <ImpactSection />
+      <div className="w-full bg-black">
+        <div className="w-full max-w-[374.8px] md:max-w-[753.6px] lg:max-w-[1148px] mx-auto px-2 md:px-2">
+          <ImpactSection />
+        </div>
       </div>
 
       {/* Metrics Section */}
-      <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-[240px]">
-        <MetricsSection />
+      <div className="w-full bg-black">
+        <div className="w-full max-w-[374.8px] md:max-w-[753.6px] lg:max-w-[1148px] mx-auto px-2 md:px-2">
+          <MetricsSection />
+        </div>
       </div>
 
       {/* Integrations Section */}
-      <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-[240px]">
-        <IntegrationsSection />
+      <div className="w-full bg-black">
+        <div className="w-full max-w-[374.8px] md:max-w-[753.6px] lg:max-w-[1148px] mx-auto px-2 md:px-2">
+          <IntegrationsSection />
+        </div>
       </div>
 
       {/* Enterprise Section */}
-      <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-[240px]">
-        <EnterpriseSection />
+      <div className="w-full bg-black">
+        <div className="w-full max-w-[374.8px] md:max-w-[753.6px] lg:max-w-[1148px] mx-auto px-2 md:px-2">
+          <EnterpriseSection />
+        </div>
       </div>
 
       {/* Footer */}

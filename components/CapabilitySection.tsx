@@ -1,14 +1,16 @@
 import React from "react";
-import Image from "next/image";
+import { AnimatedDashboard } from "./AnimatedDashboard";
 
 export const CapabilitySection: React.FC = () => {
   return (
-    <section className="w-full bg-black flex flex-col items-center">
+    <section className="w-full flex flex-col items-center">
       {/* Section Title */}
       <div className="w-full border border-[#373737] flex flex-col items-center justify-center px-6 md:px-12 py-12 md:py-15">
         <h2 className="text-2xl md:text-[40px] font-normal text-white text-center tracking-[-0.8px] leading-tight md:leading-[44px]">
           How Gradientflo{" "}
-          <span className="font-minecraft text-[28px] md:text-[36px]">turns</span>{" "}
+          <span className="font-minecraft text-[28px] md:text-[36px]">
+            turns
+          </span>{" "}
           code into capability
         </h2>
       </div>
@@ -23,18 +25,20 @@ export const CapabilitySection: React.FC = () => {
               Your Code
             </h3>
             <p className="text-base text-[rgba(250,250,250,0.7)] leading-6">
-              Connect your GitHub repositories, pull requests, commit history, and
-              issue systems. Your code is the source of truth.
+              Connect your GitHub repositories, pull requests, commit history,
+              and issue systems. Your code is the source of truth.
             </p>
           </div>
-          <div className="h-[280px] lg:h-[320px] w-full lg:w-[400px] flex items-center justify-center p-4 lg:p-0">
-            <div className="relative w-full h-full max-w-[400px]">
-              <Image
-                src="/assets/cf4825c7376ad293ca05411829897710b194e87a.png"
-                alt="Code visualization dashboard"
-                fill
-                className="object-contain"
-              />
+          <div className="h-[200px] md:h-[280px] lg:h-[320px] w-full lg:w-[400px] flex items-center justify-center p-6 md:p-4 lg:p-0">
+            <div className="bg-[#080808] border border-white/ rounded-[1.5rem] p-4 shadow-3xl relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-500/10 blur-[160px] pointer-events-none" />
+              <div className="w-full aspect-[1200/660] relative z-10">
+                <AnimatedDashboard
+                  accentColor="#10b981"
+                  speed={0.5}
+                  glowIntensity={1}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -85,16 +89,16 @@ export const CapabilitySection: React.FC = () => {
           </div>
           
           {/* Visual placeholder for Team Growth illustration */}
-          <div className="h-[280px] lg:h-[320px] w-full lg:w-[400px] flex items-center justify-center p-8">
-            <div className="relative w-full h-full flex items-center justify-center">
+          <div className="h-[280px] lg:h-[320px] w-full lg:w-[400px] flex items-center justify-center p-4 sm:p-6 lg:p-8 overflow-hidden">
+            <div className="relative w-full h-full flex items-center justify-center max-w-full">
               {/* Simplified representation - stacked cards */}
-              <div className="relative w-[280px] h-[200px]">
+              <div className="relative w-full max-w-[280px] h-[200px] scale-75 sm:scale-90 lg:scale-100 origin-center">
                 {/* Background cards */}
                 <div className="absolute top-0 left-12 w-[230px] h-[130px] bg-[#08090a] border border-[rgba(255,255,255,0.05)] rounded-xl" />
-                
+
                 {/* Middle card with gradient */}
                 <div className="absolute top-4 left-8 w-[266px] h-[116px] bg-gradient-to-br from-[#077dea] to-[#70ded1] border border-[rgba(255,255,255,0.05)] rounded-xl" />
-                
+
                 {/* Front card */}
                 <div className="absolute top-11 left-4 w-[304px] h-[108px] bg-[#08090a] border border-[rgba(255,255,255,0.05)] rounded-xl p-3 flex flex-col gap-2">
                   <div className="w-[150px] h-[14px] bg-[rgba(255,255,255,0.05)] rounded" />
@@ -111,7 +115,7 @@ export const CapabilitySection: React.FC = () => {
       </div>
 
       {/* Bottom Border Spacing */}
-      <div className="h-40 w-full border-r border-[#373737]" />
+      <div className="h-40 w-full border-r border-l border-[#373737]" />
     </section>
   );
 };

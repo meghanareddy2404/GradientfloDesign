@@ -10,6 +10,8 @@ export { MetricsSection } from "./MetricsSection";
 export { IntegrationsSection } from "./IntegrationsSection";
 export { EnterpriseSection } from "./EnterpriseSection";
 export { Footer } from "./Footer";
+export { TalentFlow } from "./TalentFlow";
+export { AnimatedDashboard } from "./AnimatedDashboard";
 export * from "./ui";
 export * from "./icons";
 

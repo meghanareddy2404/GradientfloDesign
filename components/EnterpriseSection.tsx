@@ -55,7 +55,7 @@ export const EnterpriseSection: React.FC = () => {
       </div>
 
       {/* Bottom Border Spacing */}
-      <div className="h-40 w-full border-r border-[#373737]" />
+      <div className="h-40 w-full border-x border-[#373737]" />
     </section>
   );
 };
