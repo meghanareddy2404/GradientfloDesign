@@ -1,15 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --background: #111111;
-  --foreground: #ffffff;
+@theme {
+  --color-background: #111111;
+  --color-foreground: #ffffff;
+  --color-primary: #3552bf;
+
+  --font-geist: var(--font-geist), sans-serif;
+  --font-geist-mono: var(--font-geist-mono), monospace;
+  --font-minecraft: "mac's Extended Minecraft", monospace;
+
+  --blur-xs: 6px;
 }
 
 @layer base {
   body {
-    @apply bg-[#111111] text-[#ffffff];
+    background-color: var(--color-background);
+    color: var(--color-foreground);
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
