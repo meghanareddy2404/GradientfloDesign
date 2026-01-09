@@ -1,7 +1,9 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
+import { Youtube, Twitter, Linkedin, Instagram } from "lucide-react";
 import { Logo } from "./Logo";
+// Commenting out Logo import because it can't be found. Uncomment and fix path if Logo exists.
+// import { Logo } from "../Logo";
 
 const footerLinks = {
   product: [
@@ -39,95 +41,93 @@ const footerLinks = {
 const socialLinks = [
   {
     name: "YouTube",
-    icon: "/assets/e8d08cbf19bc5efa7d95f27e0ba24d16f9fa4a4c.svg",
+    Icon: Youtube,
     href: "#youtube",
   },
   {
     name: "X (Twitter)",
-    icon: "/assets/d6cd6ca99e3d6c69afe623a9ddfd167ebbff54b3.svg",
+    Icon: Twitter,
     href: "#twitter",
   },
   {
     name: "LinkedIn",
-    icon: "/assets/1c117d4b104a2b61f2afbbdb6b059606fff51962.svg",
+    Icon: Linkedin,
     href: "#linkedin",
   },
   {
     name: "Instagram",
-    icon: "/assets/35cbaeb612ac5cb1b4562c570022cdd6936513bd.svg",
+    Icon: Instagram,
     href: "#instagram",
   },
 ];
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-black flex flex-col items-center pt-24 md:pt-30 pb-16 md:pb-24 px-4 md:px-[240px]">
-      {/* Top Section - Logo and Social */}
-      <div className="w-full max-w-[1020px] border-b border-[rgba(255,255,255,0.05)] pb-6 pt-12 md:pt-16 px-4 md:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Logo */}
-          <div className="h-16 md:h-20">
-            <Logo className="h-full" />
-          </div>
+    <footer className="w-full bg-black border-t border-[rgba(255,255,255,0.05)]">
+      <div className="w-full max-w-[1728px] mx-auto pt-[120px] pb-[96px] px-12 md:px-[120px] lg:px-[240px]">
+        {/* Top Section - Logo and Social */}
+        <div className="w-full border-b border-[rgba(255,255,255,0.05)] pb-6 mb-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            {/* Logo */}
+            <div className="h-6 md:h-8">
+              <Logo className="h-full" />
+            </div>
 
-          {/* Social Icons */}
-          <div className="flex gap-2 items-center">
-            {socialLinks.map((social) => (
-              <a
-                key={social.name}
-                href={social.href}
-                className="w-7 h-7 flex items-center justify-center hover:opacity-70 transition-opacity"
-                aria-label={social.name}
-              >
-                <Image
-                  src={social.icon}
-                  alt={social.name}
-                  width={28}
-                  height={28}
-                  className="w-full h-full"
-                />
-              </a>
-            ))}
+            {/* Social Icons */}
+            <div className="flex gap-4 items-center">
+              {socialLinks.map((social) => {
+                const Icon = social.Icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    className="w-5 h-5 flex items-center justify-center text-white hover:opacity-70 transition-opacity"
+                    aria-label={social.name}
+                  >
+                    <Icon className="w-full h-full" />
+                  </a>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Navigation Links */}
-      <div className="w-full max-w-[1020px] flex flex-wrap justify-center gap-8 md:gap-12 pt-10 md:pt-12 pb-14 md:pb-18 px-4 md:px-8">
-        {/* Product */}
-        <FooterColumn title="Product" links={footerLinks.product} />
-        
-        {/* Resources */}
-        <FooterColumn title="Resources" links={footerLinks.resources} />
-        
-        {/* Company */}
-        <FooterColumn title="Company" links={footerLinks.company} />
-        
-        {/* Documentation */}
-        <FooterColumn title="Documentation" links={footerLinks.documentation} />
-        
-        {/* Legal */}
-        <FooterColumn title="Legal" links={footerLinks.legal} />
-      </div>
+        {/* Navigation Links - All columns in one line */}
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 flex-wrap justify-start gap-6 md:gap-6 lg:gap-8 mb-10">
+          {/* Product */}
+          <FooterColumn title="PRODUCT" links={footerLinks.product} />
 
-      {/* Bottom Copyright */}
-      <div className="w-full bg-[rgba(255,255,255,0.04)]">
-        <div className="max-w-[1020px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-4 md:px-8 py-4">
-          {/* Copyright */}
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-white uppercase tracking-[1.2px]">
-              Copyright
-            </span>
-            <span className="text-white text-lg">©</span>
-            <span className="text-xs text-white uppercase tracking-[1.2px]">
-              Gradientflo 2025
-            </span>
-          </div>
+          {/* Resources */}
+          <FooterColumn title="RESOURCES" links={footerLinks.resources} />
 
-          {/* Design Credit */}
-          <div className="text-xs text-white text-center md:text-right uppercase tracking-[1.2px]">
-            <p>Designed and built by</p>
-            <p>The Super cool! People of Gradientflo 🩵</p>
+          {/* Company */}
+          <FooterColumn title="COMPANY" links={footerLinks.company} />
+
+          {/* Documentation */}
+          <FooterColumn
+            title="DOCUMENTATION"
+            links={footerLinks.documentation}
+          />
+
+          {/* Legal */}
+          <FooterColumn title="LEGAL" links={footerLinks.legal} />
+        </div>
+
+        {/* Bottom Copyright */}
+        <div className="w-full pt-6">
+          <div className="relative bg-neutral-950 rounded">
+            <div className="h-[120px] md:h-[72px] flex flex-col md:flex-row items-center justify-between gap-2 px-6 py-4 md:py-0 md:px-8">
+              {/* Copyright */}
+              <div className="text-xs text-white uppercase tracking-[1.2px] font-normal">
+                COPYRIGHT © GRADIENTFLO 2025
+              </div>
+
+              {/* Design Credit */}
+              <div className="text-xs text-white text-center md:text-right uppercase tracking-[1.2px] font-normal">
+                DESIGNED AND BUILT BY <br /> THE SUPER COOL! PEOPLE OF
+                GRADIENTFLO <span>🩵</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -142,16 +142,16 @@ interface FooterColumnProps {
 
 const FooterColumn: React.FC<FooterColumnProps> = ({ title, links }) => {
   return (
-    <div className="flex flex-col gap-1 min-w-[150px] md:min-w-[191px]">
-      <h3 className="text-[13px] font-medium text-[rgba(255,255,255,0.5)] uppercase tracking-[0.65px] px-3 py-1.5">
+    <div className="flex flex-col gap-2 min-w-[150px] md:min-w-[180px]">
+      <h3 className="text-xs font-medium text-[rgba(255,255,255,0.6)] uppercase tracking-[0.5px] mb-1">
         {title}
       </h3>
-      <ul className="flex flex-col gap-1">
+      <ul className="flex flex-col gap-1.5">
         {links.map((link) => (
           <li key={link.label}>
             <Link
               href={link.href}
-              className="block px-3 py-1.5 text-sm text-white hover:text-white/70 transition-colors rounded-full"
+              className="block text-sm text-white hover:text-white/70 transition-colors"
             >
               {link.label}
             </Link>
@@ -161,4 +161,3 @@ const FooterColumn: React.FC<FooterColumnProps> = ({ title, links }) => {
     </div>
   );
 };
-
